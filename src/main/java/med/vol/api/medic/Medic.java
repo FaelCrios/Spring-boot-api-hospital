@@ -31,6 +31,8 @@ public class Medic {
 	@Embedded
 	private Adress adress;
 	
+	private Boolean ativo;
+	
 	public Medic() {
 		
 	}
@@ -46,6 +48,7 @@ public class Medic {
 	}
 
 	public Medic(MedicRegisterData data) {
+		this.ativo = true;
 		this.nome = data.nome();
 		this.email = data.email();
 		this.setPhone(data.phone());
@@ -137,6 +140,11 @@ public class Medic {
 		if(data.getAdress() != null) {
 			this.adress.updateData(data.getAdress());
 		}
+	}
+
+	public void exclude() {
+		this.ativo = false;
+		
 	}
 	
 	
