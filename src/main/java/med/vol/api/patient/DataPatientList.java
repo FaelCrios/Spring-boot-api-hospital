@@ -3,6 +3,7 @@ package med.vol.api.patient;
 
 
 public class DataPatientList {
+	private Long id;
 	private String nome;
 	private String email;
 	private String rg;
@@ -12,14 +13,28 @@ public class DataPatientList {
 	
 	
 
-	public DataPatientList(String nome, String email, String rg) {
+	public DataPatientList(Long id,String nome, String email, String rg) {
 		super();
+		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.rg = rg;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
 	public DataPatientList(Patient patient) {
+		this.id = patient.getId();
 		this.nome = patient.getName();
 		this.email = patient.getEmail();
 		this.rg = patient.getRg();

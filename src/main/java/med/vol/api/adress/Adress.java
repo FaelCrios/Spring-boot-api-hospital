@@ -80,7 +80,29 @@ public class Adress {
 	public void setNumber(String numero) {
 		this.numero= numero;
 	}
-	
+
+	public void updateData(AdressData data) {
+		if (data.state() != null) {
+            this.state = data.state();
+        }
+        if (data.neighborhood() != null) {
+            this.neighborhood = data.neighborhood();
+        }
+        if (data.cep() != null) {
+            this.cep = data.cep();
+        }
+        if (data.city() != null) {
+            this.city = data.city();
+        }
+        if (data.street() != null) {
+            this.street = data.street();
+        }
+        if (data.numero() != null) {
+            this.numero = data.numero();
+        }
+
+	}
+
 	
 	
 	

@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import med.vol.api.adress.Adress;
 @Table(name="pacientes")
 @Entity(name = "pacientes")
@@ -108,6 +109,16 @@ public class Patient {
 			return false;
 		Patient other = (Patient) obj;
 		return Objects.equals(cpf, other.cpf);
+	}
+
+	public void updateData(@Valid PatientUpdateData data) {
+		if(data.getNome() != null) {
+			this.nome = data.getNome();
+		}
+		if(data.getAdress() != null) {
+			this.adress.updateData(data.getAdress());
+		}
+			
 	}
 	
 	

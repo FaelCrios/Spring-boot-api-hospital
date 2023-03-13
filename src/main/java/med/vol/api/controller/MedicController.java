@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import med.vol.api.medic.DataMedicList;
 import med.vol.api.medic.Medic;
 import med.vol.api.medic.MedicRegisterData;
 import med.vol.api.medic.MedicRepository;
+import med.vol.api.medic.MedicUpdateData;
 
 @RestController
 @RequestMapping("/medicos")
@@ -36,6 +38,12 @@ public class MedicController {
 		return repository.findAll(page).map(DataMedicList::new);
 	}
 	
-	
+	@PutMapping
+	@Transactional
+	public void update(@RequestBody @Valid MedicUpdateData data) {
+		var medic = repository.getReferenceById(data.getId());
+		medic.updateData(data);
+		
+	}
 	
 }

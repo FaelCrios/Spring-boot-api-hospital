@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import med.vol.api.adress.Adress;
 
 @Table(name = "medicos")
@@ -124,6 +125,18 @@ public class Medic {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public void updateData(@Valid MedicUpdateData data) {
+		if(data.getNome() != null) {
+			this.nome = data.getNome();
+		}
+		if(data.getPhone() != null) {
+			this.phone = data.getPhone();
+		}
+		if(data.getAdress() != null) {
+			this.adress.updateData(data.getAdress());
+		}
 	}
 	
 	
