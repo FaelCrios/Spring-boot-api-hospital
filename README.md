@@ -35,7 +35,7 @@ cd api
 ./mvnw spring-boot:run
 ```
 
-##é possivel acompanhar o conteudo gerado através de softwares como Postman ou então 
+é possivel acompanhar o conteudo gerado através de softwares como Postman
 
 # Autor
 
