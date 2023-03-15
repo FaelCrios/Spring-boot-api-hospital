@@ -1,6 +1,6 @@
-package med.vol.api.medic;
+package med.vol.api.domain.medic;
 
-import med.vol.api.adress.Adress;
+import med.vol.api.domain.adress.Adress;
 
 public record MedicDataDetails(Long id, String nome, String email, String crm, Speciality speciality, Adress adress) {
 

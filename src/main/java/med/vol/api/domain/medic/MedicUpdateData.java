@@ -1,9 +1,9 @@
-package med.vol.api.medic;
+package med.vol.api.domain.medic;
 
 import java.util.Objects;
 
 import jakarta.validation.constraints.NotNull;
-import med.vol.api.adress.AdressData;
+import med.vol.api.domain.adress.AdressData;
 
 public class MedicUpdateData {
 

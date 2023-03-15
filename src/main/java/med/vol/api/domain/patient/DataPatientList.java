@@ -1,4 +1,4 @@
-package med.vol.api.patient;
+package med.vol.api.domain.patient;
 
 
 

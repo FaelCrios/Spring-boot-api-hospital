@@ -1,18 +1,18 @@
-package med.vol.api.adress;
+package med.vol.api.domain.adress;
 
 import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class Adress {
 	private String state;
-	private String cep; 
-	private String city; 
+	private String cep;
+	private String city;
 	private String neighborhood;
-	private String street; 
+	private String street;
 	private String numero;
-	
+
 	public Adress() {
-		
+
 	}
 
 	public Adress(String state, String cep, String city, String neighborhood, String street, String numero) {
@@ -21,9 +21,9 @@ public class Adress {
 		this.city = city;
 		this.neighborhood = neighborhood;
 		this.street = street;
-		this.numero= numero;
+		this.numero = numero;
 	}
-	
+
 	public Adress(AdressData data) {
 		this.state = data.state();
 		this.cep = data.cep();
@@ -78,32 +78,29 @@ public class Adress {
 	}
 
 	public void setNumber(String numero) {
-		this.numero= numero;
+		this.numero = numero;
 	}
 
 	public void updateData(AdressData data) {
 		if (data.state() != null) {
-            this.state = data.state();
-        }
-        if (data.neighborhood() != null) {
-            this.neighborhood = data.neighborhood();
-        }
-        if (data.cep() != null) {
-            this.cep = data.cep();
-        }
-        if (data.city() != null) {
-            this.city = data.city();
-        }
-        if (data.street() != null) {
-            this.street = data.street();
-        }
-        if (data.numero() != null) {
-            this.numero = data.numero();
-        }
+			this.state = data.state();
+		}
+		if (data.neighborhood() != null) {
+			this.neighborhood = data.neighborhood();
+		}
+		if (data.cep() != null) {
+			this.cep = data.cep();
+		}
+		if (data.city() != null) {
+			this.city = data.city();
+		}
+		if (data.street() != null) {
+			this.street = data.street();
+		}
+		if (data.numero() != null) {
+			this.numero = data.numero();
+		}
 
 	}
 
-	
-	
-	
 }

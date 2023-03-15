@@ -1,6 +1,6 @@
-package med.vol.api.patient;
+package med.vol.api.domain.patient;
 
-import med.vol.api.adress.Adress;
+import med.vol.api.domain.adress.Adress;
 
 public record PatientDataDetails( Long id, String nome, String email, Adress adress) {
 

@@ -1,4 +1,4 @@
-package med.vol.api.patient;
+package med.vol.api.domain.patient;
 
 import java.util.Objects;
 
@@ -6,7 +6,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import med.vol.api.adress.AdressData;
+import med.vol.api.domain.adress.AdressData;
 
 public class PatientRegisterData {
 	@NotBlank

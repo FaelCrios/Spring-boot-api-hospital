@@ -1,4 +1,4 @@
-package med.vol.api.patient;
+package med.vol.api.domain.patient;
 
 import java.util.Objects;
 
@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
-import med.vol.api.adress.Adress;
+import med.vol.api.domain.adress.Adress;
 @Table(name="pacientes")
 @Entity(name = "pacientes")
 public class Patient {
