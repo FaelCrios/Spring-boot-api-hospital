@@ -25,6 +25,8 @@ public class Patient {
 	@Embedded
 	private Adress adress;
 	
+	private Boolean ativo;
+	
 	public Patient() {
 		
 	}
@@ -119,6 +121,11 @@ public class Patient {
 			this.adress.updateData(data.getAdress());
 		}
 			
+	}
+
+	public void exclude() {
+		this.ativo = false;
+		
 	}
 	
 	
