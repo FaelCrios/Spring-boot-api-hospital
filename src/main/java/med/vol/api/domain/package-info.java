@@ -1,1 +1,0 @@
-package med.vol.api.domain;
