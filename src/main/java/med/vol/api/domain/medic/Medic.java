@@ -1,20 +1,13 @@
 package med.vol.api.domain.medic;
 
-import java.util.Objects;
-
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import med.vol.api.domain.adress.Adress;
 
+import java.util.Objects;
+
 @Table(name = "medicos")
-@Entity(name = "medico")
+@Entity(name = "Medico")
 public class Medic {
 	
 	@Id 
