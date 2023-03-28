@@ -19,6 +19,13 @@ public class DataTreatmentDetails {
         this.data = data;
     }
 
+    public DataTreatmentDetails(Treatment treatment) {
+        this.id = treatment.getId();
+        this.idMedico = treatment.getMedic().getId();
+        this.idPatiente = treatment.getPatient().getId();
+        this.data = treatment.getData();
+    }
+
     public Long getId() {
         return id;
     }

@@ -17,11 +17,11 @@ public class Treatment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medico_id")
-    private Medic medic;
+    private Medic medico;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private Patient patient;
+    private Patient paciente;
     private LocalDateTime data;
 
     public Treatment() {
@@ -29,8 +29,8 @@ public class Treatment {
 
     public Treatment(Long id, Medic medic, Patient patient, LocalDateTime data) {
         this.id = id;
-        this.medic = medic;
-        this.patient = patient;
+        this.medico = medic;
+        this.paciente = patient;
         this.data = data;
     }
 
@@ -43,19 +43,19 @@ public class Treatment {
     }
 
     public Medic getMedic() {
-        return medic;
+        return medico;
     }
 
     public void setMedic(Medic medic) {
-        this.medic = medic;
+        this.medico = medic;
     }
 
     public Patient getPatient() {
-        return patient;
+        return paciente;
     }
 
     public void setPatient(Patient patient) {
-        this.patient = patient;
+        this.paciente = patient;
     }
 
     public LocalDateTime getData() {

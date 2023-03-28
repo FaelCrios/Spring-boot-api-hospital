@@ -10,7 +10,7 @@ public class DataTreatmentPlanner {
     private Long idMedico;
 
     @NotNull
-    private Long idPatiente;
+    private Long idPaciente;
 
     @NotNull
     @Future
@@ -18,36 +18,35 @@ public class DataTreatmentPlanner {
 
     private Speciality speciality;
 
-    public DataTreatmentPlanner(){};
-    public DataTreatmentPlanner(Long idMedic, Long idPatient, LocalDateTime time, Speciality speciality) {
-        this.idMedico = idMedic;
-        this.idPatiente = idPatient;
-        this.data = time;
+    public DataTreatmentPlanner(Long idMedico, Long idPaciente, LocalDateTime data, Speciality speciality) {
+        this.idMedico = idMedico;
+        this.idPaciente = idPaciente;
+        this.data = data;
         this.speciality = speciality;
     }
 
-    public Long getIdMedic() {
+    public Long getIdMedico() {
         return idMedico;
     }
 
-    public void setIdMedic(Long idMedic) {
-        this.idMedico = idMedic;
+    public void setIdMedico(Long idMedico) {
+        this.idMedico = idMedico;
     }
 
-    public Long getIdPatient() {
-        return idPatiente;
+    public Long getIdPaciente() {
+        return idPaciente;
     }
 
-    public void setIdPatient(Long idPatient) {
-        this.idPatiente = idPatient;
+    public void setIdPaciente(Long idPaciente) {
+        this.idPaciente = idPaciente;
     }
 
     public LocalDateTime getTime() {
         return data;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.data = time;
+    public void setData(LocalDateTime data) {
+        this.data = data;
     }
 
     public Speciality getSpeciality() {

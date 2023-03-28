@@ -13,41 +13,39 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Service
-public class TokenService{
+public class TokenService {
 
     @Value("${api.security.token.secret}")
     private String secret;
 
-    public String createToken (User user) {
+    public String gerarToken(User user) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256(secret);
+            var algoritmo = Algorithm.HMAC256(secret);
             return JWT.create()
-                    .withIssuer("API - Voll.med")
-                    .withSubject(user.getUsername())
-                    .withExpiresAt(dateExpire())
-                    .sign(algorithm);
+                    .withIssuer("API Voll.med")
+                    .withSubject(user.getLogin())
+                    .withExpiresAt(dataExpiracao())
+                    .sign(algoritmo);
         } catch (JWTCreationException exception){
-            throw new RuntimeException("Error on token JWT creation");
+            throw new RuntimeException("erro ao gerar token jwt", exception);
         }
     }
 
-    public String getSubject(String tokenJWT){
+    public String getSubject(String tokenJWT) {
         try {
-            var algorithm = Algorithm.HMAC256(secret);
-            return JWT.require(algorithm)
+            var algoritmo = Algorithm.HMAC256(secret);
+            return JWT.require(algoritmo)
                     .withIssuer("API Voll.med")
                     .build()
                     .verify(tokenJWT)
                     .getSubject();
         } catch (JWTVerificationException exception) {
-            throw new RuntimeException("tokenJWT invalid or expired!");
+            throw new RuntimeException("Token JWT inválido ou expirado!");
         }
     }
 
-
-    private Instant dateExpire() {
+    private Instant dataExpiracao() {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
-
 
 }
