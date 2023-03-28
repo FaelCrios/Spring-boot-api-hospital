@@ -1,4 +1,4 @@
-# WORKSHOP-SPRINGBOOT3-JPA 
+# SPRING-BOOT-API-HOSPITAL
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/FaelCrios/Spring-boot-api-hospital/blob/master/LICENSE) 
 
 # Sobre o projeto
