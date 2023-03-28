@@ -12,6 +12,7 @@ produção de software.
 - Java
 - Spring Boot
 - JPA / Hibernate
+- JWT
 - Flyway
 - Maven
 
@@ -22,20 +23,24 @@ produção de software.
  ### Necessário a criação de um banco de dados de preferência no mySQL para a alocação do conteudo gerado.
  
 ## Back end
-Pré-requisitos: Java 11
+Pré-requisitos: Java 17
 
 ```bash
 # clonar repositório
 git clone https://github.com/FaelCrios/Spring-boot-api-hospital
 
-# entrar na pasta do projeto back end
-cd api
+#Gerar o Package do projeto
+Através do Maven, basta utiliza a função de lifeCycle de package
 
 ## executar o projeto
-./mvnw spring-boot:run
+Será necessário uma conexão com o banco de dados!
+E utilizar o comando a seguir
+java -Dspring.profiles.active=prod -DDATASOURCE_URL=jdbc:mysql://localhost/vollmed_api -DDATASOURCE_USERNAME=root -DDATASOURCE_PASSWORD=root -jar target/api-0.0.1-SNAPSHOT.jar
 ```
 
-é possivel acompanhar o conteudo gerado através de softwares como Postman
+é possivel acompanhar o conteudo gerado através das URL's de localhost
+http://localhost:8080/swagger-ui/index.html
+Fornecendo uma visão simplificada dos Métodos HTTP disponíveis no projeto
 
 # Autor
 
